@@ -38,6 +38,8 @@
 </head>
 <body>
 
+<!--add placeholder to inputs-->
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -54,9 +56,6 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
@@ -76,10 +75,11 @@
       <form>
         <div class="form-group">
           <label for="usr">Name:</label>
-          <input type="text" class="form-control" id="usr">
+          <input type="text" class="form-control" id="usr" placeholder="enter your name">
           <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd"> 
+          <input type="password" class="form-control" id="pwd" placeholder="enter your password"> 
         </div>
+        <button type="button "class="btn btn-success"><span class="glyphicon glyphicon-log-in"></span> Login</button>
       </form>
     </div>
   </div>
