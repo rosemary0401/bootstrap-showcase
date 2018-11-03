@@ -46,7 +46,7 @@
       cursor: pointer;
     } 
 
-/* Darker background on mouse-over */
+    /* Darker background on mouse-over */
     .btn:hover {
       background-color: RoyalBlue;
     }
@@ -84,17 +84,36 @@
       <p><a href="#">Link</a></p>
       <p><a href="#">Link</a></p>
       <p><a href="#">Link</a></p>
-    </div> 
+    </div>
+    <!-- A button which trigger a modal -->    
     <div class="col-sm-10 text-left">
-      <button class="btn"><i class="fa fa-home"></i> Home</button>
+      <button class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-home"></i> Home</button>
     </div>
   </div>
 </div>
 
-
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
+
+<!-- create a modal-->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <!--modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button  class="close" data-dismiss="modal"></button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
