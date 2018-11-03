@@ -36,20 +36,6 @@
       }
       .row.content {height:auto;} 
     }
-    
-    .btn {
-      background-color: DodgerBlue;
-      border: none;
-      color: white;
-      padding: 12px 16px;
-      font-size: 16px;
-      cursor: pointer;
-    } 
-
-    /* Darker background on mouse-over */
-    .btn:hover {
-      background-color: RoyalBlue;
-    }
   </style>
 </head>
 <body>
@@ -87,7 +73,7 @@
     </div>
     <!-- A button which trigger a modal -->    
     <div class="col-sm-10 text-left">
-      <button class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-home"></i> Home</button>
+      <button class="btn btn-info" data-toggle="modal" data-target="#myModal"><i class="fa fa-home"></i> Home</button>
     </div>
   </div>
 </div>
@@ -109,7 +95,7 @@
         <p>Some text in the modal.</p>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-default" data-dismiss="modal">Close</button>
+        <button class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
