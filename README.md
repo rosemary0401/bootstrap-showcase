@@ -19,7 +19,7 @@ https://startbootstrap.com/template-categories/all/
 
 https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/
 
-## Profolio
+## Portfolio
 https://blackrockdigital.github.io/startbootstrap-grayscale/
 
 https://blackrockdigital.github.io/startbootstrap-freelancer/
