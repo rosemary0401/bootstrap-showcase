@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hello Bootstrap</title>
+  <title>Hello Toggle</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script>
-    $( document ).ready(function() {
-        let isClose = false;
+    $(document).ready(function() {
 
-        $('#toggle').click(function () {
-          // console.log("click!!");
-          // $('#wrapper').toggleClass('toggled');
-          if (isClose) {
-          
-          }
-
-          isClose = !isClose;
-        }); 
     });
   </script>
   <style>
@@ -28,7 +18,9 @@
       border-radius: 0;
     }
     
-    .row.content {height: 450px}
+    .row.content {
+      height: 450px
+    }
     
     .sidenav {
       padding-top: 20px;
@@ -47,7 +39,10 @@
         height: auto;
         padding: 15px;
       }
-      .row.content {height:auto;} 
+
+      .row.content {
+        height:auto;
+      } 
     }
   </style>
 </head>
@@ -69,9 +64,6 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
