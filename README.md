@@ -1,12 +1,19 @@
 # TODO
-* tab
-* drop down nav -> notification
-* toggle sidebar
 * drop down sidebar
-* widget (panel, table in panel)
 * baseball profile
 * weather app (game schedule)
 * Timeline
+* Scroll and Show up
+
+# Cool Effect
+* Running number
+* Type effect
+* TwentyTwenty
+* Barba.js
+* bideo.js
+* Animated Transition Effects
+* Filterizr
+* Mark.js
 
 # Resources
 
