@@ -9,6 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
   <style>
     body{
       position: relative;
@@ -268,12 +269,181 @@ $(document).ready(function(){
    
         window.location.hash = hash;
       });
-    } // End if
+    }
   });
 
   $('#articles').animateNumber({ number: 96 }, 8000);
   $('#days').animateNumber({ number: 446 }, 8000);
   $('#views').animateNumber({ number: 83982 }, 8000);
+
+  var ctxBar = document.getElementById("barChart");
+  var barChart = new Chart(ctxBar, {
+    type: 'bar',
+    data: {
+      labels: ["USA", "Taiwan", "Japan"],
+      datasets: [{
+        label: 'Sales',
+        data: [7, 29, 13],
+        backgroundColor: [
+          'rgba(17, 162, 184, 0.2)',
+          'rgba(28, 167, 45, 0.2)',
+          'rgba(33, 122, 183, 0.2)'
+        ],
+        borderColor: [
+          'rgba(17, 162, 184, 1)',
+          'rgba(28, 167, 45, 1)',
+          'rgba(33, 122, 183, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }],
+        xAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Country'
+          }
+        }]
+      }
+    }
+  });
+
+  var ctxLine = document.getElementById("lineChart");
+  var lineChart = new Chart(ctxLine, {
+    type: 'line',
+    data: {
+      labels: ["2010", "2015", "2020"],
+      datasets: [{
+        label: 'Sales',
+        data: [12, 19, 3],
+        backgroundColor: 'rgba(17, 162, 184, 0.2)',
+        borderColor: 'rgba(17, 162, 184, 1)',
+        borderWidth: 1,
+        fill: false
+      }]
+    }
+  });
+
+  var ctxPie = document.getElementById("pieChart");
+  var pieChart = new Chart(ctxPie, {
+    type: 'pie',
+    data: {
+      labels: ["China", "Russia", "USA"],
+      datasets: [{
+        label: 'Sales',
+        data: [10, 6, 13],
+        backgroundColor: [
+          'rgba(17, 162, 184, 0.2)',
+          'rgba(28, 167, 45, 0.2)',
+          'rgba(33, 122, 183, 0.2)'
+        ],
+        borderColor: [
+          'rgba(17, 162, 184, 1)',
+          'rgba(28, 167, 45, 1)',
+          'rgba(33, 122, 183, 1)'
+        ],
+        borderWidth: 1
+      }]
+    }
+  });
+
+  var ctxStack = document.getElementById("stackChart");
+  var stackChart = new Chart(ctxStack, {
+    type: 'bar',
+    data: {
+      labels: ["January", "February", "March"],
+      datasets: [{
+        type: 'bar',
+        label: 'Revenue',
+        backgroundColor: 'rgba(28, 167, 45, 0.2)',
+        borderColor: 'rgba(28, 167, 45, 1)',
+        borderWidth: 1,
+        data: [60, 30, 80],
+      }, {
+        type: 'bar',
+        label: 'Payment',
+        backgroundColor: 'rgba(33, 122, 183, 0.2)',
+        borderColor: 'rgba(33, 122, 183, 1)',
+        borderWidth: 1,
+        data: [-30, -10, -40]
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          stacked: true
+        }]
+      }
+    }
+  }); 
+
+  var ctxScatter = document.getElementById("scatterChart");
+  var scatterChart = new Chart(ctxScatter, {
+    type: 'scatter',
+    data: {
+      datasets: [{
+        label: 'strike',
+        backgroundColor: 'rgba(28, 167, 45, 0.2)',
+        borderColor: 'rgba(28, 167, 45, 1)',
+        borderWidth: 1,
+        data: [{
+          x: 1.1,
+          y: 2.5,
+        }, {
+          x: 3.2,
+          y: -1.4,
+        }, {
+          x: 2.4,
+          y: -1.2,
+        }]
+      }, {
+        label: 'ball',
+        backgroundColor: 'rgba(33, 122, 183, 0.2)',
+        borderColor: 'rgba(33, 122, 183, 1)',
+        borderWidth: 1,
+        data: [{
+          x: -1.2,
+          y: -0.5,
+        }, {
+          x: -3.5,
+          y: 3.0,
+        }, {
+          x: 2.0,
+          y: -3.3,
+        }, {
+          x: 0.8,
+          y: 0.3,
+        }]
+      }]
+    }
+  }); 
+
+  var ctxArea = document.getElementById("areaChart");
+  var areaChart = new Chart(ctxArea, {
+    type: 'line',
+    data: {
+      labels: ["2010", "2015", "2020"],
+      datasets: [{
+        label: 'Bitcoin',
+        data: [12, 19, 3],
+        backgroundColor: 'rgba(28, 167, 45, 0.2)',
+        borderColor: 'rgba(28, 167, 45, 1)',
+        borderWidth: 1
+      },{
+        label: 'Litecoin',
+        data: [3, 10, 23],
+        backgroundColor: 'rgba(33, 122, 183, 0.2)',
+        borderColor: 'rgba(33, 122, 183, 1)',
+        borderWidth: 1
+      }]
+    }
+  });
 });
 </script>
 </body>
