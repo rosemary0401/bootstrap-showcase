@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+ 
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
     .row.content {height: 1500px}
     
@@ -32,6 +33,12 @@
       }
       .row.content {height: auto;} 
     }
+    
+    #my-photo img {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -39,7 +46,10 @@
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav">
-      <h4>John's Blog</h4>
+      <div id="my-photo">
+        <img src="../me.jpg" class="img-circle" height="150" width="150">
+      </div>
+      <h3>Tzu-Ying Chao</h3>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#section1">Home</a></li>
         <li><a href="#section2">Friends</a></li>
