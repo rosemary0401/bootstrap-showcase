@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"></script>
   <style>
     body{
       position: relative;
@@ -67,6 +68,15 @@
     
     .fab:hover, .fas:hover {
       color: #337ab7;
+    }
+
+    .my-mask {
+      text-align:center;
+      color:white;
+      margin-bottom: 50px;
+      margin-top: 50px;
+      background:url('castle.JPG') no-repeat center;
+      background-attachment: fixed;
     }
   </style>
 </head>
@@ -149,8 +159,29 @@
       <i class="fab fa-gitlab fa-4x skill"></i>
       <i class="fas fa-database fa-4x skill"></i>
       <i class="fab fa-aws fa-4x skill"></i>
-      <br><br><br><br>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br>
+      <div class="my-mask">
+        <br>
+        <br>
+        <table align="center" width="100%">
+          <thead>
+            <tr>
+              <td><h1 id="views"></h1></td>
+              <td><h1 id="days"></h1></td>
+              <td><h1 id="articles"></h1></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><p>Cups of coffee</p></td>
+              <td><p>Cups of coffee</p></td>
+              <td><p>Cups of coffee</p></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <br>
+      </div>
       
       <h4 id="section4">EXPERIENCE</h4>
       <h1>WORK EXPERIENCE</h1>      
@@ -189,22 +220,26 @@
       <div class="row">
         <div class="col-md-4">
           <div class="panel panel-primary">
-            <div class="panel-heading">Panel Header</div>
+            <div class="panel-heading">Stack chart</div>
             <div class="panel-body">
-              <canvas id="barChart"></canvas>
+              <canvas id="stackChart"></canvas>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="panel panel-primary">
-            <div class="panel-heading">Panel Header</div>
-            <div class="panel-body">Panel Content</div>
+            <div class="panel-heading">Scatter chart</div>
+            <div class="panel-body">
+              <canvas id="scatterChart"></canvas>
+            </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="panel panel-primary">
-            <div class="panel-heading">Panel Header</div>
-            <div class="panel-body">Panel Content</div>
+            <div class="panel-heading">Area line chart</div>
+            <div class="panel-body">
+              <canvas id="areaChart"></canvas>
+            </div>
           </div>
         </div>
       </div>
@@ -231,6 +266,10 @@ $(document).ready(function(){
       });
     } // End if
   });
+
+  $('#articles').animateNumber({ number: 90 }, 8000);
+  $('#days').animateNumber({ number: 400 }, 8000);
+  $('#views').animateNumber({ number: 112400 }, 8000);
 });
 </script>
 </body>
