@@ -56,11 +56,11 @@
     }
     
     .carousel-caption {
-      right: 5%;
-      text-align: right;
-      max-width: 300px;
-      left: auto;
-      padding:5px;
+      left: 5%;
+      top: 50%;
+      text-align: left;
+      max-width: 400px;
+      right: auto;
     }
     
     .skill {
@@ -84,11 +84,23 @@
       border-radius:50%;
       border:8px solid white;
     }
+
     .my-title {
       color:#337ab7;
     }
+
     .my-content {
       font-size:20px;
+    }
+
+    .typewrite {
+      color: #337ab7;
+      font-weight: bold;
+      font-size: 45px;
+    }
+
+    .before-type {
+      font-size: 28px;
     }
   </style>
 </head>
@@ -128,19 +140,21 @@
           <div class="item active">
             <img src="slide1.jpg" alt="Los Angeles" style="width:100%;">
             <div class="carousel-caption">
-              <h3>Hello</h3>
-              <p>I am Tzu-Ying</p>
+              <h1>Hello!</h1>
+              <span class="before-type">I am </span>
+              <span class="typewrite" data-period="2000" data-type='[ "Tzu-Ying", "a Designer", "a Writer", "a Blogger" ]'></span>
+              <span class="wrap"></span>
             </div>
           </div>
 
           <div class="item">
             <img src="slide2.jpg" alt="Chicago" style="width:100%;">
             <div class="carousel-caption">
-              <h3>I am a Designer and Writer.</h3>
+              <h1>I am a Designer</h1>
               <p>SPECIALIZED IN a variety of charts designed to address important data visualization needs. </p>
             </div>
           </div>
-        
+
           <div class="item">
             <img src="slide3.jpg" alt="New york" style="width:100%;">
             <div class="carousel-caption">
@@ -286,9 +300,9 @@ $(document).ready(function(){
     }
   });
 
-  $('#articles').animateNumber({ number: 96 }, 8000);
-  $('#days').animateNumber({ number: 446 }, 8000);
-  $('#views').animateNumber({ number: 83982 }, 8000);
+  $('#articles').animateNumber({ number: 96 }, 12000);
+  $('#days').animateNumber({ number: 446 }, 12000);
+  $('#views').animateNumber({ number: 83982 }, 12000);
 
   var ctxBar = document.getElementById("barChart");
   var barChart = new Chart(ctxBar, {
@@ -458,6 +472,63 @@ $(document).ready(function(){
       }]
     }
   });
+
+  var TxtType = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+  };
+
+    TxtType.prototype.tick = function() {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+      var that = this;
+      var delta = 200 - Math.random() * 100;
+
+      if (this.isDeleting) { delta /= 2; }
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+
+      setTimeout(function() {
+        that.tick();
+      }, delta);
+    };
+
+    window.onload = function() {
+      var elements = document.getElementsByClassName('typewrite');
+      for (var i=0; i<elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+      }
+      
+      var css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #337ab7 }";
+      document.body.appendChild(css);
+    };
 });
 </script>
 </body>
