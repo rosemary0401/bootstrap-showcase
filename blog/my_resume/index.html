@@ -4,7 +4,7 @@
   <title>Chao Tzu Ying</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Dosis:600,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,600,800" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -35,6 +35,7 @@
       position: fixed;
       padding-top: 20px;
       text-align:center;
+      font-weight:bold;
     }
     
     .main{
@@ -187,6 +188,18 @@
       z-index: 400;
     }
     
+    .timeline-title{
+      font-size:20px;
+      font-weight:bold;
+    }
+    
+    .float-right{
+      color:gray;
+      float:right;
+    }
+    .timeline-content{
+      font-size:18px;
+    }
   </style>
 </head>
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="0">
@@ -251,20 +264,21 @@
           </div>
         </div>
       </div>
-      <br>
-      <br>
+      <br><br><br><br>
+      <div>
       <h4 id="section2">ABOUT ME</h4>
       <h1 class="my-title"><b>WHO AM I?</b></h1>
       <p style="font-size:20px"><b>Hello! I am a Designer & Writer.</b></p>
       <P class="my-content">Dedicated and energized worker with 6 years comprehensive experience in Chunghwa Post. I'm keen to learn website design and programming language in my free time.<br><br>
       Especially proficient with different kinds of charts design with interactive visualization. Having extensive knowledge of working with innovative technology tools.<br><br> 
       I'm also specialized in writing food reviews on my blog while staying in Fukuoka. I aim to make a difference through my creative solutions. <br><br>Stay hungry, stay foolish.</P>
-      <br><br>
+      </div>
+      <br><br><br><br><br>
       
-      <br><br><br><br>
+      <div>
       <h4 id="section3">My SPECIALTY</h4>
       <h1 class="my-title"><b>MY SKILLS</b></h1><br>    
-      <P class="my-content">PROGRAMMING LANGUAGE & TOOLS</P><br>   
+      <P class="my-content"><b>PROGRAMMING LANGUAGE & TOOLS</b></P><br>   
       <i class="fab fa-html5 fa-4x skill"></i>
       <i class="fab fa-css3-alt fa-4x skill"></i>
       <i class="fab fa-js-square fa-4x skill"></i>
@@ -293,44 +307,86 @@
           </thead>
           <tbody>
             <tr>
-              <td><p>PAGE VIEWS</p></td>
-              <td><p>DAYS IN JAPAN</p></td>
-              <td><p>ARTICLES</p></td>
+              <td><p><b>PAGE VIEWS</b></p></td>
+              <td><p><b>DAYS IN JAPAN</b></p></td>
+              <td><p><b>ARTICLES</b></p></td>
             </tr>
           </tbody>
         </table>
         <br>
         <br>
       </div>
-      
-      <h4 id="section4">EXPERIENCE</h4>
+      </div>
+      <br><br><br><br><br>
+<div>      
+      <h4 id="section4">MY EXPERIENCE</h4>
       <h1 class="my-title"><b>WORK EXPERIENCE</b></h1>      
       <P></P>
-      
-      <h4>Latest News</h4>
+
       <ul class="timeline">
         <li>
-          <span>New Web Design</span>
-          <span class="float-right">21 March, 2014</span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+          <span class="timeline-title">Life in Tokyo, Japan</span>
+          <span class="float-right">July 2018 - Present</span>
+          <p><ul class="timeline-content">
+            <li>Creating useful charts to make data meet visualization needs.</li>
+            <li>Writing food review of Tokyo restaurants.</li>          
+          </ul></p>          
         </li>
         <li>
-          <span>21 000 Job Seekers</span>
-          <span class="float-right">4 March, 2014</span>
-          <p>Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
+          <span class="timeline-title">Life in Fukuoka, Japan</span>
+          <span class="float-right">August 2017 - July 2018</span>
+          <p><ul class="timeline-content">
+            <li>I've written nearly hundred articles about food review of Fukuoka restaurants on my blog.</li>
+            <li>Learning programming language and tools to design a website.
+          </ul></p>
         </li>
         <li>
-          <span>Awesome Employers</span>
-          <span class="float-right">1 April, 2014</span>
-          <p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla odio, tincidunt vitae nunc vitae, mollis pharetra velit. Sed nec tempor nibh...</p>
+          <span class="timeline-title">Post Office Counter Clerk at Xing-an Post Office,Taipei</span>
+          <span class="float-right">April 2015 - July 2017</span>
+          <p><ul class="timeline-content">
+            <li>Helped customers to determine the best postal service to meet their needs as well as the optimum postal rates for their budget.</li>
+            <li>Answering questions from customers in a calm and patient manner.</li>
+            <li>Helped customers to select the best packaging to use to wrap their items for delivery to different destinations.</li>
+            <li>Distributed mails to postal mailboxes in the post office.</li>
+          </ul></p>
         </li>
         <li>
-          <span>My Education</span>
-          <span class="float-right">1 April, 2014</span>
-          <p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla odio, tincidunt vitae nunc vitae, mollis pharetra velit. Sed nec tempor nibh...</p>
+          <span class="timeline-title">Administration Staff at Taipei Post Office,Taipei</span>
+          <span class="float-right">November 2012 - March 2015</span>
+          <p><ul class="timeline-content">
+            <li>Maintenance and trouble-shooting of network connection devices and ATM of all branch post offices in Taipei.</li>
+            <li>Dealt with questions and inquiries of service system from branch post offices.</li>
+            <li>Provided instructions and solutions of operating system and platform to internal staff.</li>
+          </ul></p>
+        </li>
+        <li>
+          <span class="timeline-title">Post Office Counter Clerk at Guting Post Office,Taipei</span>
+          <span class="float-right">June 2011 - October 2012</span>
+          <p><ul class="timeline-content">
+            <li>Handled all types of counter business for customers dealing with postal service and banking service.</li>
+            <li>Dealt with questions and inquiries from customers and helped them to find the services that they needed for different situations.</li>
+            <li>Promoted financial services such as savings and insurance to customers.
+          </ul></p>
+        </li>
+        <li>
+          <span class="timeline-title">Bachelor of Education at National Ping Tung University</span>
+          <span class="float-right">February 2009 - January 2010</span>
+          <p></p>
+        </li>
+        <li>
+          <span class="timeline-title">English Language Academy at University of Auckland, New Zealand</span>
+          <span class="float-right">August 2008 - January 2009</span>
+          <p></p>
+        </li>
+        <li>
+          <span class="timeline-title">Bachelor of Education at National Ping Tung University</span>
+          <span class="float-right">September 2005 - June 2008</span>
+          <p></p>
         </li>
       </ul>
-
+      </div>
+      <br><br><br><br>
+      <div>
       <h4 id="section5">MY WORK</h4>
       <h1 class="my-title"><b>RECENT WORK</b></h1> 
       <div class="row">
@@ -385,6 +441,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
       <br>
       <br>
