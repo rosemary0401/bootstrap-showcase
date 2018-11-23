@@ -9,10 +9,25 @@
 * Running number
 * Type effect
 * TwentyTwenty
+
+https://zurb.com/playground/twentytwenty
+
 * Barba.js
+
+http://barbajs.org/demos.html
+
 * bideo.js
+
+https://rishabhp.github.io/bideo.js/
+
 * Animated Transition Effects
+
+https://codyhouse.co/demo/animated-transition-effects/fire-extinguisher.html
+
 * Filterizr
+
+http://yiotis.net/filterizr/
+
 * Mark.js
 
 # Resources
