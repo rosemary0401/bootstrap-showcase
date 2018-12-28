@@ -10,8 +10,9 @@
   <script>
     $(document).ready(function() {
        $("#toggle").on("click", function() {
-        $(".sidenav").toggleClass("activeside");
-        $(".main").toggleClass("activemain");
+        //$(".sidenav").toggleClass("activeside");
+        //$(".main").toggleClass("activemain");
+        $(".aaa").toggleClass("collapse");
       });
     });
   </script>
@@ -28,15 +29,18 @@
       position: fixed;
       transition: 0.3s;
     }
-     .main {
+    
+    .main {
       margin-left: 250px;
       transition: 0.3s;
     }
-     .activeside {
+    
+    .activeside {
       margin-left: -250px;
       transition: 0.3s;
     }
-     .activemain {
+    
+    .activemain {
       margin-left: 0px !important; /* override css */
       transition: 0.3s;
     }
@@ -63,21 +67,12 @@
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav">
-      <h4>John's Blog</h4>
       <ul class="nav nav-pills nav-stacked" id="menu">
-        <li class="active"><a href="#section1"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-        <li><a href="#section2"><i class="glyphicon glyphicon-baby-formula"></i> Friends</a></li>
-        <li><a href="#section3"><i class="glyphicon glyphicon-heart-empty"></i> Family</a></li>
-        <li><a href="#section3"><i class="glyphicon glyphicon-picture"></i> Photos</a></li>
-      </ul><br>
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search Blog..">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
-        </span>
-      </div>
+        <li class="active"><a href="#section1"><i class="glyphicon glyphicon-home"></i><span class="aaa"> Home</span></a></li>
+        <li><a href="#section2"><i class="glyphicon glyphicon-baby-formula"></i><span class="aaa"> Friends</span></a></li>
+        <li><a href="#section3"><i class="glyphicon glyphicon-heart-empty"></i><span class="aaa"> Family</span></a></li>
+        <li><a href="#section3"><i class="glyphicon glyphicon-picture"></i><span class="aaa"> Photos</span></a></li>
+      </ul>
     </div>
 
     <div class="col-sm-9 main">
