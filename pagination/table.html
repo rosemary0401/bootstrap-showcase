@@ -22,8 +22,7 @@
         { id:8, adName: "AdName 8"},
         { id:9, adName: "AdName 9"},
         { id:10, adName: "AdName 10"},
-        { id:11, adName: "AdName 11"},
-        { id:12, adName: "AdName 12"}
+        { id:11, adName: "AdName 11"}
     ]; 
 
     function prevPage() {
@@ -51,6 +50,10 @@
 
       $("#listing_table tbody").empty();
       for (var i = (page-1) * records_per_page; i < (page * records_per_page); i++) {
+        if (i >= objJson.length) {
+          break;
+        }
+        
         $("<tr>").append(
           $("<td>").text(objJson[i].id),
           $("<td>").text(objJson[i].adName)
