@@ -6,3 +6,7 @@
 ### Windows ###
 Thumbs.db
 ehthumbs.db
+
+### Large files ###
+ori/
+
