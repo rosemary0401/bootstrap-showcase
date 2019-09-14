@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pagination Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    var current_page = 1;
+    var records_per_page = 3;
+
+    var objJson = [
+        { adName: "AdName 1"},
+        { adName: "AdName 2"},
+        { adName: "AdName 3"},
+        { adName: "AdName 4"},
+        { adName: "AdName 5"},
+        { adName: "AdName 6"},
+        { adName: "AdName 7"},
+        { adName: "AdName 8"},
+        { adName: "AdName 9"},
+        { adName: "AdName 10"}
+    ]; 
+
+    function prevPage() {
+      if (current_page > 1) {
+        current_page--;
+        changePage(current_page);
+      }
+    }
+
+    function nextPage() {
+      if (current_page < numPages()) {
+        current_page++;
+        changePage(current_page);
+      }
+    }
+
+    function changePage(page) {
+      var btn_next = document.getElementById("btn_next");
+      var btn_prev = document.getElementById("btn_prev");
+      var listing_table = document.getElementById("listingTable");
+      var page_span = document.getElementById("page");
+
+      // Validate page
+      if (page < 1) page = 1;
+      if (page > numPages()) page = numPages();
+
+      listing_table.innerHTML = "";
+
+      for (var i = (page-1) * records_per_page; i < (page * records_per_page); i++) {
+        if (i >= objJson.length) {
+          break;
+        }
+        
+        listing_table.innerHTML += objJson[i].adName + "<br>";
+      }
+      page_span.innerHTML = page;
+
+      if (page == 1) {
+        btn_prev.style.visibility = "hidden";
+      } else {
+        btn_prev.style.visibility = "visible";
+      }
+
+      if (page == numPages()) {
+        btn_next.style.visibility = "hidden";
+      } else {
+        btn_next.style.visibility = "visible";
+      }
+    }
+
+    function numPages() {
+      return Math.ceil(objJson.length / records_per_page);
+    }
+
+    window.onload = function() {
+      changePage(1);
+    };
+  </script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>My Pagination Testing</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Simple</a></li>
+        <li><a href="#section2">Bootstrap</a></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9">
+      <h4><small>RECENT POSTS</small></h4>
+      <hr>
+      <div id="listingTable"></div>
+      <hr>
+      <a class="btn btn-info" href="javascript:prevPage()" id="btn_prev">Prev</a>
+      page: <span id="page"></span>
+      <a class="btn btn-info" href="javascript:nextPage()" id="btn_next">Next</a>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>

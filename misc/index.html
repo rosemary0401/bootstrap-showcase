@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="html2canvas.js"></script>
+    <script>
+    function convert() {
+      html2canvas(document.querySelector(".mywrapper")).then(canvas => {
+        document.body.appendChild(canvas)
+      });
+    }
+    </script>
+    <style>  
+      .mywrapper {
+        border: 1px solid black;
+        height: 350px;
+        width: 810px;
+        background: url(fukuoka_map.png);
+        background-repeat: no-repeat;
+        background-size: 810px 350px;
+      }
+    </style>
+  </head>
+  <body>
+    Google Map Link:
+    <br>
+    <div class="mywrapper">
+      <div class="icon-wrap" style="width: 100%;height: 100%;display: flex;font-size: 40px;align-items: center;justify-content: center;">
+        <span class="glyphicon glyphicon-map-marker" style="color:#D73E36;"></span>檢視地圖
+      </div>
+    </div>
+    <hr>
+    <input type="button" onclick="convert();" value="Convert" style="font-size: 20px; -webkit-appearance: button;"></input>
+    <hr>
+  </body>
+</html>
