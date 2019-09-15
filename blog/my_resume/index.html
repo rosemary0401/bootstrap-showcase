@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Chao Tzu Ying</title>
+  <title>Lee Yun-Wei</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Dosis:400,600,800" rel="stylesheet">
@@ -98,36 +98,10 @@
       border-radius: 99em;
       border: 4px solid #eee;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
-      /*hover effect (middle.my_photo:hover.middle-text)*/
       opacity: 1;
       display: block;
       transition: .5s ease;
       backface-visibility: hidden;
-    }
-    .middle {
-      transition: .5s ease;
-      opacity: 0;
-      position: absolute;
-      top: 15%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      text-align: center;
-    }
-
-    .my_photo:hover .me {
-      opacity: 0.3;
-    }
-
-    .my_photo:hover .middle {
-      opacity: 1;
-    }
-
-    .middle-text {
-      background-color: opacity;
-      color: white;
-      font-size: 20px;
-      padding: 10px 20px;
     }
 
     .my-title {
@@ -140,14 +114,10 @@
 
     .typewrite {
       font-weight: bold;
-      font-size: 50px;
+      font-size: 42px;
       font-family:'Dosis', sans-serif;
       color: white;
       text-shadow: 1px 5px 2px #337ab7, 0 0 60px #337ab7, 0 0 45px #337ab7;
-    }
-
-    .before-type {
-      font-size: 50px;
     }
 
     .nav {
@@ -209,11 +179,8 @@
     <nav class="col-sm-3 sidenav" id="myScrollspy">
       <div id="my-photo" class="my_photo">
         <img src="me.png" class="img-circle me">
-        <div class="middle">
-          <div class="middle-text">HELLO</div>
-        </div>
       </div>
-      <h3><b>Chao Tzu-Ying</b></h3>
+      <h3><b>Lee, Yun-Wei</b></h3>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#section1">Home</a></li>
         <li><a href="#section2">About</a></li>
@@ -222,9 +189,10 @@
         <li><a href="#section5">Work</a></li>
       </ul>
       <br>
-      <a href="https://www.facebook.com/profile.php?id=100024899648246"><i class="fab fa-facebook-square fa-2x"></i></a>
-      <a href="https://github.com/rosemary0401/"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://www.facebook.com/pracinverse"><i class="fab fa-facebook-square fa-2x"></i></a>
+      <a href="https://github.com/HemingwayLee/"><i class="fab fa-github fa-2x"></i></a>
       <a href="http://biglegsrabbit.blogspot.com/"><i class="fab fa-blogger fa-2x"></i></a>
+      <a href="https://www.linkedin.com/in/yun-wei-hemingway-lee-844319ba/"><i class="fab fa-linkedin fa-2x"></i></a>
     </nav>
 
     <div class="col-sm-9 main">
@@ -241,16 +209,16 @@
           <div class="item active">
             <img src="slider1.png" style="width:100%;">
             <div class="carousel-caption">
-              <h1 style="font-size:50px"><b>HELLO!</b></h1>
-              <span class="before-type">I am </span>
-              <span class="typewrite" data-period="2000" data-type='[ "Tzu-Ying", "a Designer", "a Writer", "a Blogger" ]'></span>
+              <div style="font-size:42px"><b>HELLO!</b></div>
+              <span style="font-size:42px">I am </span>
+              <span class="typewrite" data-period="2000" data-type='[ "Lee, Yun-Wei", "a Developer", "an AI Engineer"]'></span>
               <span class="wrap"></span>
             </div>
           </div>
           <div class="item">
             <img src="slider2.png" style="width:100%;">
             <div class="carousel-caption">
-              <p style="font-size:30px"><b>S</b>pecialized in a variety of charts designed to address important data visualization needs.</p>
+              <p style="font-size:30px">I <b>Believe</b> "The world belongs to those still willing to get our hands dirty."</p>
             </div>
           </div>
           <div class="item">
@@ -300,14 +268,14 @@
             <tr>
               <td><h1 id="views"></h1></td>
               <td><h1 id="days"></h1></td>
-              <td><h1 id="articles"></h1></td>
+              <td><h1 id="projects"></h1></td>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><p><b>PAGE VIEWS</b></p></td>
               <td><p><b>DAYS IN JAPAN</b></p></td>
-              <td><p><b>ARTICLES</b></p></td>
+              <td><p><b>PROJECTS</b></p></td>
             </tr>
           </tbody>
         </table>
@@ -316,72 +284,72 @@
       </div>
       </div>
       <br><br><br><br><br>
-<div>      
-      <h4 id="section4">MY EXPERIENCE</h4>
-      <h1 class="my-title"><b>LIFE EXPERIENCE</b></h1>      
-      <P></P>
+      <div>      
+        <h4 id="section4">MY EXPERIENCE</h4>
+        <h1 class="my-title"><b>LIFE EXPERIENCE</b></h1>      
+        <P></P>
 
-      <ul class="timeline">
-        <li>
-          <span class="timeline-title">Life in Tokyo, Japan</span>
-          <span class="float-right">July 2018 - Present</span>
-          <p><ul class="timeline-content">
-            <li>Creating useful charts to make data meet visualization needs.</li>
-            <li>Writing food review of Tokyo restaurants.</li>          
-          </ul></p>          
-        </li>
-        <li>
-          <span class="timeline-title">Life in Fukuoka, Japan</span>
-          <span class="float-right">August 2017 - July 2018</span>
-          <p><ul class="timeline-content">
-            <li>I've written nearly hundred articles about food review of Fukuoka restaurants on my blog.</li>
-            <li>Learning programming language and tools to design a website.
-          </ul></p>
-        </li>
-        <li>
-          <span class="timeline-title">Post Office Counter Clerk at Xing-an Post Office,Taipei</span>
-          <span class="float-right">April 2015 - July 2017</span>
-          <p><ul class="timeline-content">
-            <li>Helped customers to determine the best postal service to meet their needs as well as the optimum postal rates for their budget.</li>
-            <li>Answering questions from customers in a calm and patient manner.</li>
-            <li>Helped customers to select the best packaging to use to wrap their items for delivery to different destinations.</li>
-            <li>Distributed mails to postal mailboxes in the post office.</li>
-          </ul></p>
-        </li>
-        <li>
-          <span class="timeline-title">Administration Staff at Taipei Post Office,Taipei</span>
-          <span class="float-right">November 2012 - March 2015</span>
-          <p><ul class="timeline-content">
-            <li>Maintenance and trouble-shooting of network connection devices and ATM of all branch post offices in Taipei.</li>
-            <li>Dealt with questions and inquiries of service system from branch post offices.</li>
-            <li>Provided instructions and solutions of operating system and platform to internal staff.</li>
-          </ul></p>
-        </li>
-        <li>
-          <span class="timeline-title">Post Office Counter Clerk at Guting Post Office,Taipei</span>
-          <span class="float-right">June 2011 - October 2012</span>
-          <p><ul class="timeline-content">
-            <li>Handled all types of counter business for customers dealing with postal service and banking service.</li>
-            <li>Dealt with questions and inquiries from customers and helped them to find the services that they needed for different situations.</li>
-            <li>Promoted financial services such as savings and insurance to customers.
-          </ul></p>
-        </li>
-        <li>
-          <span class="timeline-title">Bachelor of Education at National Ping Tung University</span>
-          <span class="float-right">February 2009 - January 2010</span>
-          <p></p>
-        </li>
-        <li>
-          <span class="timeline-title">English Language Academy at University of Auckland, New Zealand</span>
-          <span class="float-right">August 2008 - January 2009</span>
-          <p></p>
-        </li>
-        <li>
-          <span class="timeline-title">Bachelor of Education at National Ping Tung University</span>
-          <span class="float-right">September 2005 - June 2008</span>
-          <p></p>
-        </li>
-      </ul>
+        <ul class="timeline">
+          <li>
+            <span class="timeline-title">Life in Tokyo, Japan</span>
+            <span class="float-right">July 2018 - Present</span>
+            <p><ul class="timeline-content">
+              <li>Creating useful charts to make data meet visualization needs.</li>
+              <li>Writing food review of Tokyo restaurants.</li>          
+            </ul></p>          
+          </li>
+          <li>
+            <span class="timeline-title">Life in Fukuoka, Japan</span>
+            <span class="float-right">August 2017 - July 2018</span>
+            <p><ul class="timeline-content">
+              <li>I've written nearly hundred articles about food review of Fukuoka restaurants on my blog.</li>
+              <li>Learning programming language and tools to design a website.
+            </ul></p>
+          </li>
+          <li>
+            <span class="timeline-title">Post Office Counter Clerk at Xing-an Post Office,Taipei</span>
+            <span class="float-right">April 2015 - July 2017</span>
+            <p><ul class="timeline-content">
+              <li>Helped customers to determine the best postal service to meet their needs as well as the optimum postal rates for their budget.</li>
+              <li>Answering questions from customers in a calm and patient manner.</li>
+              <li>Helped customers to select the best packaging to use to wrap their items for delivery to different destinations.</li>
+              <li>Distributed mails to postal mailboxes in the post office.</li>
+            </ul></p>
+          </li>
+          <li>
+            <span class="timeline-title">Administration Staff at Taipei Post Office,Taipei</span>
+            <span class="float-right">November 2012 - March 2015</span>
+            <p><ul class="timeline-content">
+              <li>Maintenance and trouble-shooting of network connection devices and ATM of all branch post offices in Taipei.</li>
+              <li>Dealt with questions and inquiries of service system from branch post offices.</li>
+              <li>Provided instructions and solutions of operating system and platform to internal staff.</li>
+            </ul></p>
+          </li>
+          <li>
+            <span class="timeline-title">Post Office Counter Clerk at Guting Post Office,Taipei</span>
+            <span class="float-right">June 2011 - October 2012</span>
+            <p><ul class="timeline-content">
+              <li>Handled all types of counter business for customers dealing with postal service and banking service.</li>
+              <li>Dealt with questions and inquiries from customers and helped them to find the services that they needed for different situations.</li>
+              <li>Promoted financial services such as savings and insurance to customers.
+            </ul></p>
+          </li>
+          <li>
+            <span class="timeline-title">Bachelor of Education at National Ping Tung University</span>
+            <span class="float-right">February 2009 - January 2010</span>
+            <p></p>
+          </li>
+          <li>
+            <span class="timeline-title">English Language Academy at University of Auckland, New Zealand</span>
+            <span class="float-right">August 2008 - January 2009</span>
+            <p></p>
+          </li>
+          <li>
+            <span class="timeline-title">Bachelor of Education at National Ping Tung University</span>
+            <span class="float-right">September 2005 - June 2008</span>
+            <p></p>
+          </li>
+        </ul>
       </div>
       <br><br><br><br>
       <div>
@@ -465,7 +433,7 @@ $(document).ready(function(){
     }
   });
 
-  $('#articles').animateNumber({ number: 96 }, 12000);
+  $('#projects').animateNumber({ number: 96 }, 12000);
   $('#days').animateNumber({ number: 446 }, 12000);
   $('#views').animateNumber({ number: 83982 }, 12000);
 
@@ -691,7 +659,7 @@ $(document).ready(function(){
       
       var css = document.createElement("style");
       css.type = "text/css";
-      css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #ffffff }";
+      css.innerHTML = ".typewrite > .wrap { border-right: 0.03em solid #ffffff }";
       document.body.appendChild(css);
     };
 });
