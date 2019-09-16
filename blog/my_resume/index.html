@@ -234,31 +234,66 @@
       <div>
       <h4 id="section2">ABOUT ME</h4>
       <h1 class="my-title"><b>WHO AM I?</b></h1>
-      <p style="font-size:20px"><b>Hello! I am a Designer & Writer.</b></p>
-      <P class="my-content">Dedicated and energized worker with 6 years comprehensive experience in Chunghwa Post. I'm keen to learn website design and programming language in my free time.<br><br>
-      Especially proficient with different kinds of charts design with interactive visualization. Having extensive knowledge of working with innovative technology tools.<br><br> 
-      I'm also specialized in writing food reviews on my blog while staying in Fukuoka. I aim to make a difference through my creative solutions. <br><br>Stay hungry, stay foolish.</P>
+      <p style="font-size:20px"><b>Hello! I am a full stack developer.</b></p>
+      <P class="my-content">I have 9+ years of experience in full life cycle of software development including requirement definition, proof of concept, design, implementation, testing, deployment and maintenance.<br><br>
+      In my current job, I create prototypes and build solutions with cutting edge technologies such as Blockchain, Machine Learning, and IoT.<br><br> 
+      I have experience in leading and working with offshore teams to develop new products and maintain old products. I also have experience in building infrastructure and processes for a startup company.<br><br></P>
       </div>
-      <br><br><br><br><br>
+
+      <br><br><br><br>
       
       <div>
       <h4 id="section3">My SPECIALTY</h4>
       <h1 class="my-title"><b>MY SKILLS</b></h1><br>    
-      <P class="my-content"><b>PROGRAMMING LANGUAGE & TOOLS</b></P><br>   
-      <i class="fab fa-html5 fa-4x skill"></i>
-      <i class="fab fa-css3-alt fa-4x skill"></i>
-      <i class="fab fa-js-square fa-4x skill"></i>
-      <i class="fab fa-github fa-4x skill"></i>
-      <i class="fab fa-gitlab fa-4x skill"></i>
-      <i class="fas fa-database fa-4x skill"></i>
-      <i class="fab fa-aws fa-4x skill"></i>
+      <P class="my-content"><b>PROGRAMMING LANGUAGE & TOOLS & METHODOLOGIES</b></P><br>   
+      <table>
+        <tr>
+          <td><i class="fas fa-file-code fa-2x skill" data-toggle="tooltip" title="Programming Languages"></i></td>
+          <td>Python, C\C++, JavaScript, C#, Scala, Go, Java, TypeScript, PHP</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-database fa-2x skill" data-toggle="tooltip" title="Databases"></i></td>
+          <td>PostgreSQL, MSSQL Server, MongoDB, Redis, SQLite, MySQL, Elasticsearch</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-users-cog fa-2x skill" data-toggle="tooltip" title="Methodologies"></i></td>
+          <td>Extreme Programming, Unit Test, Scrum, Kanban, Lean, Design Patterns, DevOps</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-wrench fa-2x skill" data-toggle="tooltip" title="Testing Tools"></i></td>
+          <td>Selenium, AutoIt</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-cloud fa-2x skill" data-toggle="tooltip" title="Clouds"></i></td>
+          <td>AWS, Azure, Google Cloud</td>
+        </tr>
+        <tr>
+          <td><i class="fab fa-docker fa-2x skill" data-toggle="tooltip" title="Virtualization Tools"></i></td>
+          <td>Docker, Docker Compose, VMWare, VirtualBox</td>
+        </tr>
+        <tr>
+          <td><i class="fas fa-cog fa-2x skill" data-toggle="tooltip" title="Build Tools"></i></td>
+          <td>sbt, maven, GNU make</td>
+        </tr>
+      </table>
+
       <br><br>
       <p class="my-content">
-      
-      <i class="fa fa-check" aria-hidden="true"></i> Provided a full variety of imaging requires from commercial and official data<br>
-      <i class="fa fa-check" aria-hidden="true"></i> Designed as well as provided proposals to broad spectrum customers<br>
-      <i class="fa fa-check" aria-hidden="true"></i> Oversaw all aspects of design projects as a front-end developer<br>
-      
+        <i class="fa fa-check" aria-hidden="true"></i>  Familiar with Supervised learning & Unsupervised learning & Reinforcement learning<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Familiar with NLP (Tokenization, word2vec, BERT, NER, sentiment analysis, chatbots, question answering, and language modeling)<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Familiar with build automation, test automation, and deployment automation<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Familiar with CI/CD (Jenkins, GitLab CI, and Azure DevOps)<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Familiar with Cloud Services (EC2, ECS, RDS, S3, Lambda/Azure Function, Azure Machine Learning Service/CoLab, AutoML, CosmosDB, and KeyVault)<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Familiar with MVC (Play Framework, Django) framework and ORM framework (Slick)<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Familiar with Inter-process Communication (IPC) and Multithreaded Programming<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Familiar with Hotfix Release Process<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Experience with public and private BlockChain technologies (BTC, ETH, XRP, Smart Contract, Wallet, Trading Bots, Market Making, Hyperledger Fabric, MultiChain)<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Experience with frontend development (HTML/CSS/JavaScript/TypeScript/jQuery)<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Experience with node.js, ReactJS and Electron<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Experience with Web Application & Desktop Application (WPF and MFC)<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Experience with Linux Shell Script and Windows Batch Script<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Experience with I18N & L10N Process<br>
+        <i class="fa fa-check" aria-hidden="true"></i>  Experience with SOAP and RESTful web service (Django Rest Framework)<br>
       </p>
       <div class="my-mask">
         <br>
@@ -616,52 +651,54 @@ $(document).ready(function(){
     this.isDeleting = false;
   };
 
-    TxtType.prototype.tick = function() {
-      var i = this.loopNum % this.toRotate.length;
-      var fullTxt = this.toRotate[i];
+  TxtType.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
 
-      if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-      } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+    var that = this;
+    var delta = 200 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function() {
+      that.tick();
+    }, delta);
+  };
+
+  window.onload = function() {
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i=0; i<elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-type');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtType(elements[i], JSON.parse(toRotate), period);
       }
+    }
+    
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.03em solid #ffffff }";
+    document.body.appendChild(css);
 
-      this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-      var that = this;
-      var delta = 200 - Math.random() * 100;
-
-      if (this.isDeleting) { delta /= 2; }
-
-      if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-      } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-      }
-
-      setTimeout(function() {
-        that.tick();
-      }, delta);
-    };
-
-    window.onload = function() {
-      var elements = document.getElementsByClassName('typewrite');
-      for (var i=0; i<elements.length; i++) {
-        var toRotate = elements[i].getAttribute('data-type');
-        var period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-          new TxtType(elements[i], JSON.parse(toRotate), period);
-        }
-      }
-      
-      var css = document.createElement("style");
-      css.type = "text/css";
-      css.innerHTML = ".typewrite > .wrap { border-right: 0.03em solid #ffffff }";
-      document.body.appendChild(css);
-    };
+    $('[data-toggle="tooltip"]').tooltip();
+  };
 });
 </script>
 </body>
