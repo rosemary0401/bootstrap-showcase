@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hello v4-like Panels</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    .row.content {height: 450px}
+    
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+
+    /* div.panel-body > img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    div.panel-body > a > img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    } */
+
+    .my_panel > .panel-body {
+      padding: 0px;
+    }
+
+    .my_panel > .panel-body > a > img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    .my_panel > .panel-body > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .my_panel > .panel-footer {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">  
+  <div class="row content">  
+    <div class="col-sm-12 text-left">
+      <h4 id="section5">Side projects & Thesis & Certificates</h4>
+      <h1 class="my-title"><b>My WORK</b></h1> 
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default my_panel">
+            <!-- <div class="panel-heading">AI Visualization</div> -->
+            <div class="panel-body">
+              <a href="#" target="blank"><img src="imgs/w2v.png"/></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-default my_panel">
+            <!-- <div class="panel-heading">subway.js</div> -->
+            <div class="panel-body">
+              <a href="#" target="blank"><img src="https://user-images.githubusercontent.com/8428372/32406057-fba351ae-c1ab-11e7-811d-4bb15b887881.png"/></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-default my_panel">
+            <!-- <div class="panel-heading">OpenCV</div> -->
+            <div class="panel-body">
+              <a href="#" id="opencvBtn"><img src="imgs/opencv.png"/></a>
+            </div>
+          </div>
+        </div>
+      </div>    
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default my_panel">
+            <!-- <div class="panel-heading">日本語 WordNet Visualization</div> -->
+            <div class="panel-body">
+              <a href="#" target="blank"><img src="imgs/wnjpn.png"/></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-default my_panel">
+            <!-- <div class="panel-heading">Play Retro Games</div> -->
+            <div class="panel-body">
+              <a href="#" target="blank"><img src="imgs/breakout.png"/></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-default my_panel">
+            <!-- <div class="panel-heading">Scrum Master Certificate</div> -->
+            <div class="panel-body">
+              <a href="#" id="scrumBtn"><img src="imgs/scrum.png"/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default my_panel">
+            <!-- <div class="panel-heading"></div> -->
+            <div class="panel-body">
+              <a href="#" target="blank"><img src="imgs/ncovjapan.png"/></a>
+            </div>
+            <div class="panel-footer">
+              <h3>Javascript Japan Map</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, voluptas, sunt vitae mollitia iure perferendis rerum odio! Natus, cupiditate, est, quas, non perspiciatis in quo possimus eos voluptas tempore maxime.</p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-default my_panel">
+            <div class="panel-body">
+              <a href="#" target="blank"><img src="imgs/paper.png"/></a>
+            </div>
+            <div class="panel-footer">
+              <h3>Thesis</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, voluptas, sunt vitae mollitia iure perferendis rerum odio! Natus, cupiditate, est, quas, non perspiciatis in quo possimus eos voluptas tempore maxime.</p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>    
+      <br>
+    </div>
+  </div>
+</div>
+</body>
+</html>
