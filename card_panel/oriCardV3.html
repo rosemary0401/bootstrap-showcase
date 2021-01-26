@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Card</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    
+  </script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+
+    .thumbnail {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+      transition: 0.3s;
+      min-width: 40%;
+      border-radius: 5px;
+    }
+
+    .thumbnail-description {
+      min-height: 40px;
+    }
+
+    .thumbnail:hover {
+      cursor: pointer;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>Title here</h4>
+      <hr>
+    </div>
+
+    <div class="col-sm-9">
+      <h4><small>My Card</small></h4>
+      <hr>
+      <div class="row">
+        <div class="col-md-2">&nbsp;</div>
+        <div class="col-md-8">
+          <div class="row space-16">&nbsp;</div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="thumbnail">
+                <div class="caption text-center" onclick="location.href='https://flow.microsoft.com/en-us/connectors/shared_slack/slack/'">
+                  <div class="position-relative">
+                    <img src="https://az818438.vo.msecnd.net/icons/slack.png" style="width:72px;height:72px;" />
+                  </div>
+                  <h4 id="thumbnail-label"><a href="https://flow.microsoft.com/en-us/connectors/shared_slack/slack/" target="_blank">Microsoft Slack</a></h4>
+                  <p><i class="glyphicon glyphicon-user light-red lighter bigger-120"></i>&nbsp;Auditor</p>
+                  <div class="thumbnail-description smaller">Slack is a team communication tool, that brings together all of your team communications in one place, instantly searchable and available wherever you go.</div>
+                </div>
+                <div class="caption card-footer text-center">
+                  <ul class="list-inline">
+                    <li><i class="people lighter"></i>&nbsp;7 Active Users</li>
+                    <li></li>
+                    <li><i class="glyphicon glyphicon-envelope lighter"></i><a href="#">&nbsp;Help</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
