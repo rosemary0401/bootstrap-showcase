@@ -1,34 +1,28 @@
+# version
+![3 vs 4](https://opensenselabs.com/blog/tech/bootstrap-3-or-bootstrap-4)
+* SASS (v4) is more powerful than LESS (v3)
+* Font size update from px (v3) to rem (v4)
+* Grid System Updated
+* v4 file size is bigger
+* v5 will drop jQuery
+
+## Timeline
+* `v3`: alpha 2013/08/19
+* `v4`: alpha 2015/08/19, beta 2017/08/10
+* `v5`: alpha 2020/06/18
+
+## Customize is not easy
+1. Get css, javascript files before minify, modify code (many places)
+2. Clone bootstrap project, modify source code, and rebuild it
+* [Ref](https://stackoverflow.com/questions/28261287/how-to-change-btn-color-in-bootstrap)
+
+
 # TODO
 * drop down sidebar
 * baseball profile
 * weather app (game schedule)
 * Timeline
 * Scroll and Show up
-
-# Cool Effect
-* Running number
-* Type effect
-* TwentyTwenty
-
-https://zurb.com/playground/twentytwenty
-
-* Barba.js
-
-http://barbajs.org/demos.html
-
-* bideo.js
-
-https://rishabhp.github.io/bideo.js/
-
-* Animated Transition Effects
-
-https://codyhouse.co/demo/animated-transition-effects/fire-extinguisher.html
-
-* Filterizr
-
-http://yiotis.net/filterizr/
-
-* Mark.js
 
 # Resources
 
