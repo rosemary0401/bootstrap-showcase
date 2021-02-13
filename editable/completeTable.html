@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hello Editable Table</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+  <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    .row.content {height: 450px}
+    
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    .myeditor[contenteditable="true"] { 
+      border: 2px solid red;
+    }
+
+    .myeditor[contenteditable="true"]:hover  { 
+      background-color: rgba(217, 245, 255, 0.8);
+    }
+    
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content { height:auto; } 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-12 text-left"> 
+      <button id="btnInsert" class="btn btn-primary">
+        <i class="glyphicon glyphicon-plus"></i> Add a new row
+      </button>
+      <table id="myTable" class="table">
+        <tr>
+          <td>Date</td>
+          <td>Chapter</td>
+          <td>Description</td>
+          <td>Visualization</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>2021-03-01</td>
+          <td>Chapter 1: Introduction</td>
+          <td># Introduction to machine learning</td>
+          <td></td>
+          <td>
+            <button class="btn btn-primary" tag="del"><i class="glyphicon glyphicon-trash"></i></button><button class="btn btn-primary" tag="edit"><i class="glyphicon glyphicon-pencil"></i></button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="editModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="editTitle" class="modal-title">Edit</h4>
+      </div>
+      <div class="modal-body">
+        <label for="date">Date:</label>
+        <input id="date" style="width:100%;" class="date-selector" type="text" placeholder="select a date"/>
+        <label for="chapter">Chapter:</label>
+        <input id="chapter" type="text" style="width:100%;" placeholder="chapter name"></input>
+        <label for="wysiwyg">Description:</label>
+        <textarea id="wysiwyg"></textarea>
+        <label for="vis">Visualization:</label>
+        <select id="vis">
+          <option value="" selected></option>
+          <option value="knn.html">k-NN</option>
+          <option value="kmeans.html">k-means clustering</option>
+          <option value="nn.html">Neural Network</option>
+          <option value="w2v.html">Word2vec</option>
+          <option value="hp.html">Hyperparameters</option>
+          <option value="ngramLangModel.html">n-gram language model</option>
+          <option value="convolution.html">Image Filter</option>
+          <option value="gd_1d.html">Gradient descent</option>
+          <option value="gd_2d.html">Gradient descent 2D example</option>
+        </select>
+        <hr>
+        <button class="btn btn-primary" id="submit">
+          <i class="glyphicon glyphicon-ok-circle"></i> Submit
+        </button>
+        <button class="btn btn-primary" onclick="$('#editModal').modal('hide');">
+          <i class="glyphicon glyphicon-remove-circle"></i> Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var selectedRow = null;
+  var easyMDE = new EasyMDE({
+    toolbar: ["bold", "italic", "heading", "|", "quote", "unordered-list", "ordered-list", "|", "link", "preview"],
+    element: document.getElementById('wysiwyg'),
+    autoRefresh: { delay: 300 }
+  });
+
+  $('#myTable').on('click', 'button[tag="del"]', function () {
+    $(this).closest('tr').remove();
+  });
+
+  $(".date-selector").flatpickr();
+
+  $('#btnInsert').click(function () {
+    $('<tr>').append(
+      $('<td>').text(""),
+      $('<td>').text(""),
+      $('<td>').text(""),
+      $('<td>').text(""),
+      $('<td>').append(
+        $('<button class="btn btn-primary" tag="del">').append(
+          $('<i class="glyphicon glyphicon-trash">')
+        ),
+        $('<button class="btn btn-primary" tag="edit">').append(
+          $('<i class="glyphicon glyphicon-pencil">')
+        ),
+      ),
+    ).appendTo('#myTable');
+  });
+
+  $(document).on('click', 'button[tag="edit"]', function() {
+    selectedRow = $(this).closest('tr');
+
+    $("#date").val(selectedRow.find("td:eq(0)").text());
+    $("#chapter").val(selectedRow.find("td:eq(1)").text());
+
+    $("#editModal").modal();
+
+    easyMDE.value(selectedRow.find("td:eq(2)").text());
+    setTimeout(function() {
+      easyMDE.codemirror.refresh();
+    }, 200);
+  });
+
+  $("#submit").on('click', function() {
+    selectedRow.find("td:eq(0)").text($("#date").val());
+    selectedRow.find("td:eq(1)").text($("#chapter").val());
+    selectedRow.find("td:eq(2)").text(easyMDE.value());
+
+    $('#editModal').modal('hide');
+  });
+</script>
+
+</body>
+</html>
