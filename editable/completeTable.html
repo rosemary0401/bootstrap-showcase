@@ -68,16 +68,17 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-12 text-left"> 
-      <button id="btnInsert" class="btn btn-primary">
-        <i class="glyphicon glyphicon-plus"></i> Add a new row
-      </button>
       <table id="myTable" class="table">
-        <tr>
+        <tr style="background-color: black; color: white">
           <td>Date</td>
           <td>Chapter</td>
           <td>Description</td>
           <td>Visualization</td>
-          <td></td>
+          <td>
+            <button id="btnInsert" class="btn btn-primary">
+              <i class="glyphicon glyphicon-plus"></i> Add a new row
+            </button>
+          </td>
         </tr>
         <tr>
           <td>2021-03-01</td>
@@ -167,6 +168,14 @@
 
     $("#date").val(selectedRow.find("td:eq(0)").text());
     $("#chapter").val(selectedRow.find("td:eq(1)").text());
+    
+    const url = selectedRow.find("td:eq(3)").find("a").attr('href');
+    if (url) {
+      const filename = url.substring(url.lastIndexOf('/')+1);
+      $("#vis").val(filename);
+    } else {
+      $("#vis").val("");
+    }
 
     $("#editModal").modal();
 
@@ -180,6 +189,9 @@
     selectedRow.find("td:eq(0)").text($("#date").val());
     selectedRow.find("td:eq(1)").text($("#chapter").val());
     selectedRow.find("td:eq(2)").text(easyMDE.value());
+    selectedRow.find("td:eq(3)").html(
+      `<a href="http://ec2-54-238-101-61.ap-northeast-1.compute.amazonaws.com/${$("#vis").val()}">${$("#vis option:selected").text()}</a>`
+    );
 
     $('#editModal').modal('hide');
   });
