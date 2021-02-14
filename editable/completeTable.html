@@ -11,6 +11,9 @@
   <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  
+  <!-- Check if this is necessary -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     .navbar {
       margin-bottom: 0;
@@ -69,26 +72,28 @@
   <div class="row content">
     <div class="col-sm-12 text-left"> 
       <table id="myTable" class="table">
-        <tr style="background-color: black; color: white">
-          <td>Date</td>
-          <td>Chapter</td>
-          <td>Description</td>
-          <td>Visualization</td>
-          <td>
-            <button id="btnInsert" class="btn btn-primary">
-              <i class="glyphicon glyphicon-plus"></i> Add a new row
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>2021-03-01</td>
-          <td>Chapter 1: Introduction</td>
-          <td># Introduction to machine learning</td>
-          <td></td>
-          <td>
-            <button class="btn btn-primary" tag="del"><i class="glyphicon glyphicon-trash"></i></button><button class="btn btn-primary" tag="edit"><i class="glyphicon glyphicon-pencil"></i></button>
-          </td>
-        </tr>
+        <tbody>
+          <tr style="background-color: black; color: white">
+            <td>Date</td>
+            <td>Chapter</td>
+            <td>Description</td>
+            <td>Visualization</td>
+            <td>
+              <button id="btnInsert" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Add a row</button>
+              <button id="btnPreview" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i> Preview</button>
+              <button id="btnOutput" class="btn btn-primary"><i class="glyphicon glyphicon-log-out"></i> Output</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2021-03-01</td>
+            <td>Chapter 1: Introduction</td>
+            <td># Introduction to machine learning</td>
+            <td></td>
+            <td>
+              <button class="btn btn-primary" tag="del"><i class="glyphicon glyphicon-trash"></i></button><button class="btn btn-primary" tag="edit"><i class="glyphicon glyphicon-pencil"></i></button>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
@@ -132,7 +137,47 @@
   </div>
 </div>
 
+<div class="modal fade" id="viewModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="viewTitle" class="modal-title"></h4>
+      </div>
+      <div id="viewBody" class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
+  function generateTable() {
+    var table = $("<table>").addClass($("#myTable").attr("class"));
+
+    $.each($('#myTable > tbody').children(), function(idx, ele) {
+      var tr = $(`<tr>`).attr("style", $(this).attr("style"));
+      
+      if (idx == 0) {
+        tr.append(
+          $("<td>").text($(this).find("td:eq(0)").text()),
+          $("<td>").text($(this).find("td:eq(1)").text()),
+          $("<td>").text($(this).find("td:eq(2)").text()),
+          $("<td>").text($(this).find("td:eq(3)").text()),
+        );
+      } else {
+        tr.append(
+          $("<td>").text($(this).find("td:eq(0)").text()),
+          $("<td>").text($(this).find("td:eq(1)").text()),
+          $("<td>").html(marked($(this).find("td:eq(2)").text())),
+          $("<td>").html($(this).find("td:eq(3)").html()),
+        );
+      }
+
+      tr.appendTo(table);
+    });
+
+    return table;
+  }
+
   var selectedRow = null;
   var easyMDE = new EasyMDE({
     toolbar: ["bold", "italic", "heading", "|", "quote", "unordered-list", "ordered-list", "|", "link", "preview"],
@@ -140,7 +185,7 @@
     autoRefresh: { delay: 300 }
   });
 
-  $('#myTable').on('click', 'button[tag="del"]', function () {
+  $('#myTable > tbody').on('click', 'button[tag="del"]', function () {
     $(this).closest('tr').remove();
   });
 
@@ -160,7 +205,22 @@
           $('<i class="glyphicon glyphicon-pencil">')
         ),
       ),
-    ).appendTo('#myTable');
+    ).appendTo('#myTable > tbody');
+  });
+
+  $('#btnPreview').click(function() {
+    const table = generateTable();
+    $("#viewTitle").text("Preview");
+    $("#viewBody").html(table);
+    $("#viewModal").modal();
+  });
+
+  $('#btnOutput').click(function() {
+    // get html code including self
+    const table = generateTable().wrap('<p/>').parent();
+    $("#viewTitle").text("Output");
+    $("#viewBody").html($("<textarea style='width: 100%; height: 500px'>").val(table.html()));
+    $("#viewModal").modal();
   });
 
   $(document).on('click', 'button[tag="edit"]', function() {
