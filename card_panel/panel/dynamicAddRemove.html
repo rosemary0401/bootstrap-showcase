@@ -1,0 +1,59 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+<style>
+#menu .panel {position: relative}
+#menu .fa-close {position: absolute; right:15px; top:15px; cursor:pointer;}
+</style>
+
+
+<div id="menu">
+  <div class="panel list-group">
+    <a href="#" class="list-group-item default" data-toggle="collapse" data-target="#sm1" data-parent="#menu">
+      MESSAGES <span class="label label-info">5</span>
+    </a>
+    <div id="sm1" class="sublinks collapse">
+      <div class="list-group-item">
+        TEST1
+      </div>
+      <div class="list-group-item">
+        TEST2
+      </div>
+      <div class="list-group-item">
+        TEST3
+      </div>
+    </div>
+    <span class="fa fa-close pull-right" title="Remove this entry"></span>
+  </div>
+
+  <div class="panel list-group">
+    <a href="#" class="list-group-item default" data-toggle="collapse" data-target="#sm2" data-parent="#menu">
+      MESSAGES <span class="label label-info">3</span>
+    </a>
+    <div id="sm2" class="sublinks collapse">
+      <div class="list-group-item">
+        TEST4
+      </div>
+      <div class="list-group-item">
+        TEST5
+      </div>
+      <div class="list-group-item">
+        TEST6
+      </div>
+    </div>
+    <span class="fa fa-close pull-right"></span>
+  </div>
+</div>
+<script>
+$(function(){
+  // When a click happens in the menu and has been triggered
+  // by an element having the '.fa-close' applied to it.
+  $('#menu').on('click', '.fa-close', function(e){
+     // Remove the associated '.panel' element
+     $(this).closest('.panel').remove();
+  });
+});
+</script>
