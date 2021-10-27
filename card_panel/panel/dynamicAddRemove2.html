@@ -1,0 +1,90 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+<style>
+.no-gutter > [class*='col-'] {
+  padding: 0;
+  margin: 0;
+}
+
+.fa-close:hover {
+  cursor: pointer;
+}
+
+.scrollable {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+[contenteditable="true"].single-line {
+    white-space: nowrap;
+    width:200px;
+    overflow: hidden;
+} 
+[contenteditable="true"].single-line br {
+    display:none;
+
+}
+[contenteditable="true"].single-line * {
+    display:inline;
+    white-space:nowrap;
+}
+</style>
+<!-- <div class="row no-gutter" > -->
+<div class="row" >
+  <div id="classes" class="col-md-6 scrollable" style="background-color: salmon">
+    <h1>Step 1</h1>
+    <button onclick="addClass();" class="btn btn-primary btn-block" style="border: white dashed 2px;">Add a Class</button>
+    <br>
+    <div class="panel panel-primary">
+      <div class="panel-heading"><span class="fa fa-pencil single-line" contentEditable="true"> Class 1</span><span class="fa fa-close pull-right"></span></div>
+      <div class="panel-body">Body</div>
+    </div>
+  </div>
+  <div class="col-md-3 scrollable" style="background-color: lightgreen">
+    <h1>Step 2</h1>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Training</div>
+      <div class="panel-body">
+        <ul class="list-group">
+          <li class="list-group-item active" data-toggle="collapse" data-target="#sm2">Cras justo odio</li>
+          <div id="sm2" class="sublinks collapse">  
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 scrollable" style="background-color: lightblue">
+    <h1>Step 3</h1>
+    <div class="panel panel-primary">
+      <div class="panel-heading">Prediction</div>
+      <div class="panel-body">Body</div>
+    </div>
+  </div>
+</div>
+<script>
+var gClassCount = 1;
+
+function addClass() {
+  gClassCount++;
+  var panel = `
+    <div class="panel panel-primary">
+      <div class="panel-heading"><span class="fa fa-pencil single-line" contentEditable="true"> Class ${gClassCount}</span><span class="fa fa-close pull-right"></span></div>
+      <div class="panel-body">Body</div>
+    </div>`;
+  $("#classes").append(panel);
+}
+
+$(function() {
+  $('.row').on('click', '.fa-close', function(e){
+    $(this).closest('.panel').remove();
+  });
+});
+</script>
